@@ -73,16 +73,19 @@ const cartStore = useCartStore()
 
 /* -------------------- Group Products -------------------- */
 const groupedProducts = computed(() => {
-  return (productsData as Product[]).reduce(
-    (groups: Record<string, Product[]>, product) => {
-      if (!groups[product.category]) {
-        groups[product.category] = []
-      }
-      groups[product.category].push(product)
-      return groups
-    },
-    {}
-  )
+  const groups: Record<string, Product[]> = {}
+
+  for (const product of productsData as Product[]) {
+    const category = product.category
+
+    if (!groups[category]) {
+      groups[category] = []
+    }
+
+    groups[category]!.push(product)
+  }
+
+  return groups
 })
 
 /* -------------------- Actions -------------------- */

@@ -46,7 +46,21 @@ Pinia (for cart state management)
 
 GitHub Pages (for hosting)
 
+
+
+**Prerequisites**
+- Node.js **v20 or above**
+- npm (comes with Node.js)
+
+**Install dependencies**
+npm install 
+
+
+
 **Author**
 
 Sai Mohan Krishna
 Frontend Developer
+
+
+
